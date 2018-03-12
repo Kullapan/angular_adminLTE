@@ -17,23 +17,20 @@ import { LoginLayoutComponent } from './layouts/login-layout/login-layout.compon
 const appRoutes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
   //{ path: "login", component:LoginLayoutComponent},
- // { path: "dashboard", component: DashboardComponent },
+  // { path: "dashboard", component: DashboardComponent },
   {
     path: '',
     component: LoginLayoutComponent,
     children: [
-      {
-        path: 'login', component: LoginComponent
-      }
+      { path: 'login', component: LoginComponent }
     ]
   },
   {
-    path: 'dashboard',
+    path: '',
     component: HomeLayoutComponent,
     children: [
-      {
-        path: 'dashboard', component: DashboardComponent
-      }
+      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard2', component: DashboardComponent }
     ]
   },
   { path: "**", redirectTo: "/login" }
